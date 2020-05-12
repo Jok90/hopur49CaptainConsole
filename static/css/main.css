@@ -1,0 +1,116 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+main{
+    padding-bottom: 3%;
+}
+
+footer {
+    width: 100%;
+    background-color: #58a6b1;
+    border: 1px solid #000000;
+    position:fixed;
+    bottom:0;
+}
+
+.captain{
+    background-color: #474d56 ;
+    border: solid 2px rgba(155,155,155,.5);
+}
+
+.logo{
+    max-height: 90px;
+    max-width: 90px;
+    width: 80px;
+    height: 80px;
+    display: block;
+    padding-bottom: 8px;
+}
+
+.navbar-collapse {
+    padding-top: 40px;
+}
+.navbar-header{
+    display: inline-flex;
+    color: black;
+    padding-top: 3%;
+}
+
+.text{
+    color: black;
+    padding: 3px;
+}
+
+.container-fluid{
+    height: 100px;
+    bottom: auto;
+    display: inline-flex;
+}
+
+.frontpagepic {
+    padding-left: 12%;
+}
+
+#aboutUs {
+    text-align: justify;
+    padding-left: 4%;
+    padding-top: 20px;
+}
+
+#contact {
+    text-align: right;
+    padding-bottom: 5px;
+}
+
+#email {
+    color: #353535;
+}
+
+.footerBox {
+    vertical-align: top;
+    width:48%;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #58a6b1;
+}
+
+.input {
+    text-align: center;
+    padding-top: 4%;
+}
+
+input {
+    margin: 5%;
+}
+
+#userfield {
+    background-color: lightgrey;
+}
+
+#pw {
+    background-color: lightgrey;
+}
+
+#button {
+    background-color: #58a6b1;
+    border-radius: 15px;
+    border: solid black 1px;
+}
+
+.right-buttons {
+    float: right;
+    margin-top: 5%;
+    margin-right: 2%
+
+}
+
+#legend {
+    text-align: left;
+    margin-left: 3%;
+
+}
+
+

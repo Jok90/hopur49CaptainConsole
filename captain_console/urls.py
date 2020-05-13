@@ -25,4 +25,5 @@ urlpatterns = [
     path('store/', include('store.urls')),
     path('edit/', include('edit.urls')),
     path('games/', include('game.urls')),
+    path('developers/', include('developer.urls')),
 ]

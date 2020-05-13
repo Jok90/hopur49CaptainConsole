@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>All developers:</h2>
+    <div class="developer">
+        {% for developer in developers %}
+            {% include 'developer/single_developer.html' with developer=developer %}
+        {% endfor %}
+    </div>
+{% endblock %}

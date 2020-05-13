@@ -24,4 +24,5 @@ urlpatterns = [
     path('signup/', include('signup.urls')),
     path('store/', include('store.urls')),
     path('edit/', include('edit.urls')),
+    path('games/', include('game.urls')),
 ]

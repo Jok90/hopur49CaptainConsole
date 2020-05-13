@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h1>{{ game.name }}</h1>
-    <p>{{ game.description }}</p>
-    <p>{{ game.price }}</p>
-    <p>Developer: {{ game.developer.name }}</p>
-    {% for game_image in game.gameimage_set.all %}
-        <img src="{{ game_image.image }}" class="game-img" />
-    {% endfor %}
+    <div class="gamedescription">
+        <div class="kristjan">
+            {% for game_image in game.gameimage_set.all %}
+                <img src="{{ game_image.image }}" class="game-img" />
+            {% endfor %}
+            <div id="devdes">
+                <h1>{{ game.name }}</h1>
+                <p><b>Description</b></p>
+                <p>{{ game.description }}</p>
+                <p><b>Developer:</b> {{ game.developer.name }}</p>
+            </div>
+        </div>
+        <p id="price">Price: {{ game.price }}$</p>
+    </div>
 
 {% endblock %}

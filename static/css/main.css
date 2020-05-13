@@ -170,3 +170,23 @@ footer {
     margin-top: 5%;
     text-align: center;
 }
+
+.gamedescription {
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.kristjan {
+    display: inline-flex;
+}
+
+#devdes {
+    width: 40%;
+    margin-left: 5%;
+    font-size: large;
+}
+
+#price {
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 5%;
+}

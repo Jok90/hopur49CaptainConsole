@@ -18,6 +18,12 @@
                  <option value = "Name"><a href="#">Name</a></option>
             </select>
         </form>
+        <div class="input-group">
+            <input type="search" class="form-control" id="search-box" placeholder="Enter your search here.." />
+            <div class="input-group-btn">
+                <button type="button" id="search-btn" class="btn btn-default">Search</button>
+            </div>
+        </div>
     </div>
     <div class="games">
         {% for xgame in games %}

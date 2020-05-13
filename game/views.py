@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from game.forms.game_form import GameCreateForm, GameUpdateForm
 from game.models import Game, GameImage
@@ -5,7 +6,17 @@ from game.models import Game, GameImage
 
 # Create your views here.
 def index(request):
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        games = [{
+            'id': x.id,
+            'name': x.name,
+            'description': x.description,
+            'firstImage': x.gameimage_set.first().image
+        } for x in Game.objects.filter(name__icontains=search_filter) ]
+        return JsonResponse({'data': games})
     return render(request, 'game/index.html', context={'games': Game.objects.all().order_by('name')})
+
 
 
 def get_game_by_id(request, id):

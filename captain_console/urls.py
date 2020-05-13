@@ -22,8 +22,7 @@ urlpatterns = [
     path('login/', include('login.urls')),
     path('checkout/', include('checkout.urls')),
     path('signup/', include('signup.urls')),
-    path('store/', include('store.urls')),
     path('edit/', include('edit.urls')),
-    path('games/', include('game.urls')),
+    path('store/', include('game.urls')),
     path('developers/', include('developer.urls')),
 ]

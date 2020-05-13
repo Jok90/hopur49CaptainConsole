@@ -1,7 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="candy">
-        <h2>This page shows all the games</h2>
+    <div class="store-header">
+      <ul class="store-list">
+        <a href="#"><li id="storeli"> Gameboy</li></a>
+        <a href="#"><li id="storeli">NES</li></a>
+        <a href="#"><li id="storeli">Nintendo</li></a>
+        <a href="#"><li id="storeli">Sega</li></a>
+        <a href="#"><li id="storeli">All products</li></a>
+      </ul>
+    </div>
+    <div class="allproducts">
+        <h4>All products</h4>
+        <form class="allproducts">
+             <p id="orderby">Order by:</p>
+             <select name = "dropdown">
+                 <option value = "Price" selected><a href="#">Price</a></option>
+                 < href="#"><option value = "Name"><a href="#">Name</a></option>
+            </select>
+        </form>
     </div>
     <div class="games">
         {% for xgame in games %}

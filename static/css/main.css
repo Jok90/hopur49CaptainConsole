@@ -156,3 +156,17 @@ footer {
     margin-left: 3%;
     margin-top: 3%;
 }
+
+.game-img {
+    width:  200px;
+    height: 200px;
+    background-size: cover;
+    margin: 20px;
+}
+
+.well-game {
+    display: inline-flex;
+    margin-left: 12%;
+    margin-top: 5%;
+    text-align: center;
+}

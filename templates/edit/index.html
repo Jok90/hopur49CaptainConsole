@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="edit">
+        <h4>Edit profile</h4>
+        <div class="customer">
+
+        </div>
+        <div class="input">
+            <label for="newusername">Username:</label>
+            <input type="text" id="newusername" name="username">
+            <input id="button" type="submit" value="Edit name"><br><br>
+            <label id="imgmove" for="img">Image:</label>
+            <input type="file" id="img" name="img" accept="image/*"><br><br>
+        </div>
+    </div>
+{% endblock %}

@@ -82,8 +82,11 @@ footer {
     padding-top: 4%;
 }
 
-input {
-    margin: 5%;
+.form {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
 }
 
 #userfield {
@@ -113,4 +116,43 @@ input {
 
 }
 
+#img {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
 
+.store-header {
+    background-color: rgba(69,147,177,0.35);
+}
+
+.store-list {
+    display:flex;
+    list-style:none;
+}
+
+#storeli{
+    margin: 10px;
+    padding-right: 20px;
+    color: black;
+    font-size: 18px;
+}
+
+.allproducts {
+    display: flex;
+    padding-left: 30px;
+}
+
+#orderby {
+    margin: 2px;
+    margin-top: 10px;
+}
+
+#imgmove {
+    margin-left: 7%;
+}
+
+.edit {
+    margin-left: 3%;
+    margin-top: 3%;
+}

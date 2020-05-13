@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="input">
+        <form action=""  method="get">
+            <label for="user">Username:</label>
+            <input type="text" id="user" name="user"><br><br>
+            <label for="passw">Password:</label>
+            <input type="password" id="passw" name="passw"><br><br>
+            <label id="imgmove" for="img">Image:</label>
+            <input type="file" id="img" name="img" accept="image/*"><br><br>
+            <input id="button" type="submit" value="Sign up">
+        </form>
+    </div>
+{% endblock %}

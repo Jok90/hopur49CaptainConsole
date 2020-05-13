@@ -43,7 +43,10 @@ def create_game(request):
 def update_game(request, id):
     instance = get_object_or_404(Game, pk=id)
     if request.method == 'POST':
-        print(1)
+        form = GameUpdateForm(data=request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('game_details', id=id)
     else:
         form = GameUpdateForm(instance=instance)
     return render(request, 'game/update_game.html', {

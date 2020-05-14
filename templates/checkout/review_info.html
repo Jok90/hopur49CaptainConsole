@@ -50,9 +50,10 @@
                 <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
 
             </table>
-            <a class="btn -btn-primary" id="previous-page" href="{% url 'payment-info' %}">Go back to payment</a>
-            <a class="btn -btn-primary" id="create-order" href="{% url 'confirmation' %}">Confirm order</a>
-            <!-- TENGJA TIL BAKA I PAYMENT INFO OG AFRAM A CONFIRMATION
+            <div class="info-btns">
+                <a class="back-btn" id="previous-page" href="/checkout/payment_info">Go back to payment</a>
+                <a class="cont-btn" id="create-order" href="/checkout/confirmation">Confirm order</a>
+            </div>
         </div>
     </div>
 

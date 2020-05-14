@@ -1,4 +1,4 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from game.forms.game_form import GameCreateForm, GameUpdateForm
 from game.models import Game, GameImage
@@ -41,18 +41,21 @@ def create_game(request):
 
 
 def update_game(request, id):
-    instance = get_object_or_404(Game, pk=id)
-    if request.method == 'POST':
-        form = GameUpdateForm(data=request.POST, instance=instance)
-        if form.is_valid():
-            form.save()
-            return redirect('game_details', id=id)
+    if request.user.is_staff or request.user.is_superuser:
+        instance = get_object_or_404(Game, pk=id)
+        if request.method == 'POST':
+            form = GameUpdateForm(data=request.POST, instance=instance)
+            if form.is_valid():
+                form.save()
+                return redirect('game_details', id=id)
+        else:
+            form = GameUpdateForm(instance=instance)
+        return render(request, 'game/update_game.html', {
+            'form': form,
+            'id': id
+        })
     else:
-        form = GameUpdateForm(instance=instance)
-    return render(request, 'game/update_game.html', {
-        'form': form,
-        'id': id
-    })
+        return HttpResponse(status=403)
 
 
 def delete_game(request, id):

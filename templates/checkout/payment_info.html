@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4 id="legend"> Checkout - Card information </h4><br><br>
+        <form class="form" action=""  method="get">
+            <label for="cardholder">Cardholder:</label>
+            <input type="text" id="cardholder" name="cardholder"><br><br>
+            <label for="cardnr">Card number:</label>
+            <input type="text" id="cardnr" name="cardnr"><br><br>
+            <form id="myform" method="post" action="default.html" onsubmit="return Validate(this);">
+                <label for="ExpMon">Expiration date: Month:</label>
+                <select name="ExpMon" id="ExpMon" title="select a month">
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sept</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                 </select>
+
+                 <label for="ExpYear">Year:</label>
+                 <select name="ExpYear" id="ExpYear" title="select a year">
+                     <option value="2020">2020</option>
+                     <option value="2021">2021</option>
+                     <option value="2022">2022</option>
+                     <option value="2023">2023</option>
+                     <option value="2024">2024</option>
+                     <option value="2025">2025</option>
+                     <option value="202">2026</option>
+                     <option value="2025">2027</option>
+                     <option value="2025">2028</option>
+                </select>
+                </form>
+            <br><label for="cvc">CVC:</label>
+            <input type="text" id="cvc" name="cvc"><br><br>
+
+            <a href="/" class="text" id="button">Continue</a>
+        </form>
+    <div class="payment-btns">
+        <a class="btn -btn-primary" id="previous-page" href="{% url 'checkout/contact_info' %}">Go back to contact information</a>
+        <a class="btn -btn-primary" id="previous-page" href="{% url 'checkout/review_info' %}">Review information</a>
+        <!-- TENGJA TIL BAKA I CONTACT INFO OG AFRAM I REVIEW -->
+    </div>
+    <div>
+        <br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+{% endblock %}

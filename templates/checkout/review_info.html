@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="cart">
+        
+        <div class="table-and-buttons">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td> Product </td>
+                        <td> Quantity </td>
+                        <td> Price </td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for cart in carts %}
+                    <tr>
+                        <td>
+                            <h4>{{ cart.games.name }} </h4>
+                            {{ cart.games.short_description }} <br>
+                            {{ cart.games.price }} $
+                        </td>
+
+                        <td>
+                            <input id="quantity-displayorder" data-id="{{ cart.games.id }}" type="number" value="{{ cart.quantity }}" disabled>
+                        </td>
+
+                        <td>
+                            {% for games, price in eachItemTotal.items %}
+                                {% if games == cart.games.id %}
+                                    {{ price }}
+                                {% endif %}
+                                {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+                {% for x in contact_info %}
+                    <td>
+                        <h4>{{ x.name }} </h4>
+                        {{ x.address }}
+                        {{ x.city }}
+                        {{ x.country }}
+                        {{ x.postalcode }}
+                    </td>
+                {% endfor %}
+                <td id="total" colspan="3"> <h4>Total:</h4></td>
+                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+
+            </table>
+            <a class="btn -btn-primary" id="previous-page" href="{% url 'payment-info' %}">Go back to payment</a>
+            <a class="btn -btn-primary" id="create-order" href="{% url 'confirmation' %}">Confirm order</a>
+            <!-- TENGJA TIL BAKA I PAYMENT INFO OG AFRAM A CONFIRMATION
+        </div>
+    </div>
+
+
+{% endblock %}

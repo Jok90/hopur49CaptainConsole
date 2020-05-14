@@ -195,3 +195,12 @@ footer {
     margin-left: 2%;
     margin-right: 60%;
 }
+
+.cart-btn {
+    margin-left: 30%;
+    width: 500px;
+    height: 200px;
+    background-color: lawngreen;
+
+
+}

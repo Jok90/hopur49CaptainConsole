@@ -59,6 +59,9 @@ def update_game(request, id):
 
 
 def delete_game(request, id):
-    game = get_object_or_404(Game, pk=id)
-    game.delete()
-    return redirect('game-index')
+    if request.user.is_staff or request.user.is_superuser:
+        game = get_object_or_404(Game, pk=id)
+        game.delete()
+        return redirect('game-index')
+    else:
+        return HttpResponse(status=403)

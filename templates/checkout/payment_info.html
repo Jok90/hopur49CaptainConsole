@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<h4 id="legend"> Checkout - Card information </h4><br><br>
-        <form class="form" action=""  method="get">
+    <fieldset class="pmt-field" style="border: 1px black solid">
+        <legend class="legend" id="legend"> Checkout - Card information </legend><br><br>
+        <form class="contact-form" action=""  method="get">
             <label for="cardholder">Cardholder:</label>
             <input type="text" id="cardholder" name="cardholder"><br><br>
             <label for="cardnr">Card number:</label>
@@ -35,16 +36,16 @@
                      <option value="2025">2027</option>
                      <option value="2025">2028</option>
                 </select>
-                </form>
-            <br><label for="cvc">CVC:</label>
-            <input type="text" id="cvc" name="cvc"><br><br>
-
-            <a href="/" class="text" id="button">Continue</a>
+                <br><br><label for="cvc">CVC:</label>
+                    <input type="text" id="cvc" name="cvc"><br><br>
+            </form>
         </form>
-    <div class="payment-btns">
-        <a class="btn -btn-primary" id="previous-page" href="/checkout/contact_info">Go back to contact information</a>
-        <a class="btn -btn-primary" id="previous-page" href="/checkout/review_info">Review information</a>
-    </div>
+                <div class="pmt-btns">
+                    <a class="pmt-back-btn" id="previous-page" href="/checkout/contact_info">Go back to contact information</a>
+                    <a class="pmt-cont-btn" id="previous-page" href="/checkout/review_info">Review information</a>
+                </div>
+
+    </fieldset>
     <div>
         <br><br><br><br><br><br><br><br><br><br><br>
     </div>

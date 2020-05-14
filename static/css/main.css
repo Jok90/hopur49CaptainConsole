@@ -197,10 +197,97 @@ footer {
 }
 
 .cart-btn {
-    margin-left: 30%;
-    width: 500px;
-    height: 200px;
-    background-color: lawngreen;
+    margin-left: 45%;
+    border-style: solid;
+    border-width: thin;
+    padding: 1%;
+    background-color: #58a6b1;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+}
 
+.contact-field {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 30%;
+    margin-right: 35%;
 
 }
+
+.contact-form {
+    margin-top: 5%;
+    margin-left: 10%;
+
+}
+
+.info-btns {
+    margin-left: 55%;
+    margin-top: 5%;
+    margin-right: 1%;
+    margin-bottom: 5%;
+}
+
+.back-btn {
+    margin-right: 5%;
+    border-style: solid;
+    border-width: thin;
+    padding: 1%;
+    background-color: #58a6b1;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+}
+
+.cont-btn {
+    margin-right: 5%;
+    border-style: solid;
+    border-width: thin;
+    padding: 1%;
+    background-color: #58a6b1;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+}
+
+.legend {
+    border: none;
+}
+
+.pmt-back-btn {
+    margin-right: 5%;
+    border-style: solid;
+    border-width: thin;
+    padding: 1%;
+    background-color: #58a6b1;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+}
+
+.pmt-cont-btn {
+    margin-right: 5%;
+    border-style: solid;
+    border-width: thin;
+    padding: 1%;
+    background-color: #58a6b1;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+}
+
+.pmt-field {
+    margin-top: 10%;
+    margin-bottom: 4%;
+    margin-left: 30%;
+    margin-right: 35%;
+}
+
+.pmt-btns {
+    margin-left: 42%;
+    margin-top: 5%;
+    margin-right: 1%;
+    margin-bottom: 5%;
+}
+
+

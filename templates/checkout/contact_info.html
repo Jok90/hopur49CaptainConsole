@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="input"> <!--.login-->
-        <h4 id="legend"> Checkout - Personal information </h4>
-        <form class="form" action=""  method="get">
+    <fieldset class="contact-field" style="border: 1px black solid">
+    <!-- <fieldset class="input"> .login-->
+        <legend class="legend" id="legend"> Checkout - Personal information </legend>
+        <form class="contact-form" action=""  method="get">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name"><br><br>
             <label for="address">Address:</label>
@@ -263,8 +264,9 @@
         </form>
 
         <div class="info-btns">
-            <a class="btn -btn-primary" id="previous-page" href="/store">Go back to store</a>
-            <a class="btn -btn-primary" id="previous-page" href="/checkout/payment_info">Continue to payment</a>
+            <a class="back-btn" id="previous-page" href="/store">Go back to store</a>
+            <a class="cont-btn" id="previous-page" href="/checkout/payment_info">Continue to payment</a>
         </div>
+    </fieldset>
 
 {% endblock %}

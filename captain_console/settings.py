@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'developer.apps.DeveloperConfig',
-    'game.apps.GameConfig'
+    'game.apps.GameConfig',
+    'user.apps.UserConfig',
+    'login.apps.LoginConfig'
 
     # 'captainconsole.apps.CaptainconsoleConfig',
 ]
@@ -131,3 +133,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/'

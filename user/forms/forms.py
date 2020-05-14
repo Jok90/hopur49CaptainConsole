@@ -7,14 +7,14 @@ class UserCreateForm(ModelForm):
         model = User
         exclude = ['id']
         widgets = {
-            'username': widgets.TextInput(attrs={'class': 'form-control'}),
-            'name': widgets.TextInput(attrs={'class': 'form-control'}),
-            'address': widgets.TextInput(attrs={'class': 'form-control'}),
-            'email': widgets.EmailInput(attrs={'class': 'form-control'}),
-            'phoneno': widgets.TextInput(attrs={'class': 'form-control'})
+            'username': widgets.TextInput(attrs={'class': 'register-input'}),
+            'name': widgets.TextInput(attrs={'class': 'register-input'}),
+            'address': widgets.TextInput(attrs={'class': 'register-input'}),
+            'email': widgets.EmailInput(attrs={'class': 'register-input'}),
+            'phoneno': widgets.TextInput(attrs={'class': 'register-input'})
         }
     password = forms.CharField(required=True, label="Password",
-                                 widget=forms.PasswordInput(attrs={'class': 'form-control'})
+                                 widget=forms.PasswordInput(attrs={'class': 'register-input'})
                                  )
 
 class UserLoginPage(ModelForm):

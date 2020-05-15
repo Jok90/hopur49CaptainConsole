@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-    <fieldset class="contact-field" style="border: 1px black solid">
-    <!-- <fieldset class="input"> .login-->
-        <legend class="legend" id="legend"> Checkout - Personal information </legend>
-        <form class="contact-form" action=""  method="get">
+    <div class="input">
+        <h4 id="legend"> Checkout - Personal information </h4>
+        <form class="form" action=""  method="get">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name"><br><br>
             <label for="address">Address:</label>
@@ -261,12 +260,16 @@
             </select><br><br>
             <label for="postalcode">Postal code:</label>
             <input type="text" id="postalcode" name="post"><br><br>
+
+            <div class="info-btns">
+            <a class="left-btn" id="previous-page" href="/store">Go back to store</a>
+            <a class="right-btn" id="previous-page" href="/checkout/payment_info">Continue to payment</a>
+            </div>
         </form>
-
-        <div class="info-btns">
-            <a class="back-btn" id="previous-page" href="/store">Go back to store</a>
-            <a class="cont-btn" id="previous-page" href="/checkout/payment_info">Continue to payment</a>
-        </div>
-    </fieldset>
-
+    </div>
+    <div>
+        <br><br><br><br><br><br><br><br><br><br><br>
+    </div>
 {% endblock %}
+
+

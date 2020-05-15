@@ -212,87 +212,36 @@ footer {
     color: black;
 }
 
-.contact-field {
-    margin-top: 10%;
-    margin-bottom: 10%;
-    margin-left: 30%;
-    margin-right: 35%;
-
-}
-
-.contact-form {
-    margin-top: 5%;
-    margin-left: 10%;
-
-}
-
 .info-btns {
-    margin-left: 55%;
-    margin-top: 5%;
-    margin-right: 1%;
-    margin-bottom: 5%;
+    display: inline-flex;
 }
 
-.back-btn {
-    margin-right: 5%;
-    border-style: solid;
-    border-width: thin;
-    padding: 1%;
-    background-color: #58a6b1;
-    border-color: black;
-    border-radius: 10px;
-    color: black;
-}
-
-.cont-btn {
-    margin-right: 5%;
-    border-style: solid;
-    border-width: thin;
-    padding: 1%;
-    background-color: #58a6b1;
-    border-color: black;
-    border-radius: 10px;
-    color: black;
-}
-
-.legend {
-    border: none;
-}
-
-.pmt-back-btn {
-    margin-right: 5%;
-    border-style: solid;
-    border-width: thin;
-    padding: 1%;
-    background-color: #58a6b1;
-    border-color: black;
-    border-radius: 10px;
-    color: black;
-}
-
-.pmt-cont-btn {
-    margin-right: 5%;
-    border-style: solid;
-    border-width: thin;
-    padding: 1%;
-    background-color: #58a6b1;
-    border-color: black;
-    border-radius: 10px;
-    color: black;
-}
-
-.pmt-field {
+.left-btn {
+    margin-right: 10%;
     margin-top: 10%;
-    margin-bottom: 4%;
-    margin-left: 30%;
-    margin-right: 35%;
+    border-style: solid;
+    border-width: thin;
+    padding: 1%;
+    background-color: #58a6b1;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
 }
 
-.pmt-btns {
-    margin-left: 42%;
-    margin-top: 5%;
-    margin-right: 1%;
-    margin-bottom: 5%;
+.right-btn {
+    margin-top: 10%;
+    border-style: solid;
+    border-width: thin;
+    padding: 1%;
+    background-color: #58a6b1;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+    width: 50%;
+    text-align: center;
 }
+
+
 
 

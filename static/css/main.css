@@ -169,13 +169,6 @@ footer {
     margin: 20px;
 }
 
-.user-img {
-
-    height: 200px;
-    background-size: cover;
-    margin: 20px;
-}
-
 .well-game {
     display: inline-flex;
     margin-left: 12%;
@@ -286,19 +279,6 @@ li{
     margin-bottom: 5%;
 }
 
-.clear_btn {
-    margin-top: 65%;
-    margin-left: 50%;
-    border-style: solid;
-    border-width: thin;
-    padding: 1%;
-    background-color: #58a6b1;
-    border-color: black;
-    border-radius: 10px;
-    color: black;
-    text-align: center;
-    width: 200%;
-    height: 60%;
-
+.cart-game {
 }
 

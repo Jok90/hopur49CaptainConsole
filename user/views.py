@@ -32,19 +32,17 @@ def loginpage(request):
 
 def get_user_by_id(request, id):
     return render(request, 'user/user_details.html', {
-        'user': get_object_or_404(User, pk=id)
+        'user': get_object_or_404(User, email=request.user.email)
     })
 
 def update_user(request, id):
     logging.error("-------asdasdasd------")
     instance = get_object_or_404(User, email=request.user.email)
     if request.method == 'POST':
-        instance = get_object_or_404(User, pk=id)
-        if request.method == 'POST':
-            form = UserUpdateForm(data=request.POST, instance=instance)
-            if form.is_valid():
-                form.save()
-                return redirect('user_details', id=id)
+        form = UserUpdateForm(data=request.POST, instance=instance)
+        if form.is_valid():
+            form.save()
+            return redirect('user_details', id=id)
     else:
         logging.error("-------asdasdasd------")
         form = UserUpdateForm(instance=instance)

@@ -1,60 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="cart">
-        
+    <body onload="getreviewData()">
         <div class="table-and-buttons">
             <h4 id="legend"> Checkout - Review step</h4>
             <table class="table">
-                <thead>
-                    <tr>
-                        <td> Product: </td>
-                        <td> Price: </td>
-                    </tr>
-                </thead>
 
-                <tbody>
-                {% for cart in carts %}
-                    <tr>
-                        <td>
-                            <h4>{{ cart.games.name }} </h4>
-                            {{ cart.games.short_description }} <br>
-                            {{ cart.games.price }} $
-                        </td>
 
-                        <td>
-                            <input id="quantity-displayorder" data-id="{{ cart.games.id }}" type="number" value="{{ cart.quantity }}" disabled>
-                        </td>
+                <tr>
+                    <td>Product:</td><td><input id="country" readonly></td>
+                </tr>
+                <tr>
+                    <td>Price</td><td></td>
+                </tr>
 
-                        <td>
-                            {% for games, price in eachItemTotal.items %}
-                                {% if games == cart.games.id %}
-                                    {{ price }}
-                                {% endif %}
-                                {% endfor %}
-                    </tr>
-                {% endfor %}
-                </tbody>
+                <script>
+                    function getreviewData() {
+                        var getcountry = localStorage.getItem("country");
+                        document.getElementById("country").setAttribute(value,"x");
+                        element = document.createElement("div");
+                        name_elem.textContent = getcountry.country;
+                        element.appendChild(name_elem);
 
-                {% for x in contact_info %}
-                    <td>
-                        <h4>{{ x.name }} </h4>
-                        {{ x.address }}
-                        {{ x.city }}
-                        {{ x.country }}
-                        {{ x.postalcode }}
-                    </td>
-                {% endfor %}
-                <td id="total" colspan="3"> <h4>Total:</h4></td>
-                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+                    }
+
+                </script>
+
 
             </table>
+        </div>
             <div class="info-btns">
                 <a class="left-btn" id="previous-page" href="/checkout/payment_info">Go back to payment</a>
                 <a class="right-btn" id="create-order" href="/checkout/confirmation">Confirm order</a>
             </div>
-        </div>
-    </div>
 
+    </body>
 
 {% endblock %}

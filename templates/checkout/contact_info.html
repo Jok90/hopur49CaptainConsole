@@ -2,7 +2,7 @@
 {% block content %}
     <div class="input">
         <h4 id="legend"> Checkout - Personal information </h4>
-        <form class="form" action=""  method="get">
+        <!--<form class="form" id="formid" action=""  method="get">-->
             <label for="name">Name:</label>
             <input type="text" id="name" name="name"><br><br>
             <label for="address">Address:</label>
@@ -264,12 +264,31 @@
             <div class="info-btns">
             <a class="left-btn" id="previous-page" href="/store">Go back to store</a>
             <a class="right-btn" id="previous-page" href="/checkout/payment_info">Continue to payment</a>
+                <button onclick="continue_payment()" class="buy" id="cart-btn">payment</button>
             </div>
-        </form>
+
+            <script>
+            function continue_payment() {
+              var tempname=  document.getElementById('name').value;
+                localStorage.setItem("name", tempname );
+                var tempaddress=  document.getElementById('address').value;
+                localStorage.setItem("address", tempaddress);
+                var tempcity=  document.getElementById('city').value;
+                localStorage.setItem("city", tempcity);
+                var tempcountry =  document.getElementById('country').value;
+                localStorage.setItem("country", tempcountry);
+                var temppostal=  document.getElementById('postalcode').value;
+                localStorage.setItem("postal", temppostal);
+                window.location.href = 'http://127.0.0.1:8000/checkout/payment_info';
+            }
+
+            </script>
+        <!--</form>-->
     </div>
     <div>
         <br><br><br><br><br><br><br><br><br><br><br>
     </div>
+
 {% endblock %}
 
 

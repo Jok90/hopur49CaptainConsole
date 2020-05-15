@@ -2,14 +2,8 @@
 {% block content %}
     <div class="confirmation">
         <h2>Your order is confirmed!</h2>
-        <h3>Thank you for purchasing from our website, your order will be delivered soon!</h3><br><br><br><br><br>
+        <h3>Thank you for purchasing from our website, your order will be processed soon!</h3><br><br><br><br><br>
 
-        <a class="cart-btn" onclick="clearStorage()" id="create-order" href="{% url 'game-index' %}">Go back to store</a>
-
-        <script>
-            function clearStorage() {
-                window.localStorage.clear();
-            }
-        </script>
+        <a class="cart-btn" id="create-order" href="{% url 'game-index' %}">Go back to store</a>
     </div>
 {% endblock %}

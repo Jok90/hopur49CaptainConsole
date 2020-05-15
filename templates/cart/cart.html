@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div>
+        <ul id="cart-items">
+
+        </ul>
+    </div>
+    <div id="total_price">
+
+    </div>
+    <script>
+         var cartRaw = localStorage.getItem('cart');
+         var cart;
+         if(cartRaw === null){
+             cart = [];
+         }
+         else{
+             cart = JSON.parse(cartRaw);
+         }
+         var cartitems = document.getElementById("cart-items")
+         var totalprice = 0;
+         for(i=0; i<cart.length;i++){
+
+             element = document.createElement("li");
+             var name_element = document.createElement("p");
+             name_element.textContent=cart[i].name;
+             element.appendChild(name_element);
+             var price_element = document.createElement("p");
+             price_element.textContent=cart[i].price;
+             element.appendChild(price_element);
+             cartitems.appendChild(element);
+             totalprice += cart[i].price;
+         }
+         var totalprice_element = document.getElementById("total_price")
+        totalprice_element.textContent=totalprice;
+    </script>
+
+
+{% endblock %}

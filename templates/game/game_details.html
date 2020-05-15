@@ -22,6 +22,29 @@
         <a href="{% url 'update_game' game.id %}" class="block btn btn-primary">Update game </a>
     </div>
     {% endif %}
+        <script>
+            function add_to_cart(){
+                var cartRaw = localStorage.getItem('cart');
+                var cart;
+                if(cartRaw === null){
+                    cart = [];
+                }
+                else{
+                    cart = JSON.parse(cartRaw);
+                }
+                cart.push({
+                    id:{{ game.id }},
+                    image:"{{ game.image }}",
+                    name:"{{ game.name }}",
+                    price:{{ game.price }},
+                })
+                localStorage.setItem("cart", JSON.stringify(cart));
+
+            }
+        </script>
+
+
+        <button onclick="add_to_cart()" class="cart-btn" id="cart-btn" ">Add to cart</button>
 
 
         <a href="/checkout/contact_info">

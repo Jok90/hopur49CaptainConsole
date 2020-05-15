@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'developer.apps.DeveloperConfig',
     'game.apps.GameConfig',
     'user.apps.UserConfig',
-    'login.apps.LoginConfig'
+    'login.apps.LoginConfig',
+    'cart.apps.BasketConfig'
 
     # 'captainconsole.apps.CaptainconsoleConfig',
 ]

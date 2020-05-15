@@ -26,19 +26,21 @@ def get_game_by_id(request, id):
 
 
 def create_game(request):
-    if request.method == 'POST':
-        form = GameCreateForm(data=request.POST)
-        if form.is_valid():
-            game = form.save()
-            game_image = GameImage(image=request.POST['image'], game=game)
-            game_image.save()
-            return redirect('game-index')
+    if request.user.is_staff or request.user.is_superuser:
+        if request.method == 'POST':
+            form = GameCreateForm(data=request.POST)
+            if form.is_valid():
+                game = form.save()
+                game_image = GameImage(image=request.POST['image'], game=game)
+                game_image.save()
+                return redirect('game-index')
+        else:
+            form = GameCreateForm()
+        return render(request, 'game/create_game.html', {
+            'form': form
+        })
     else:
-        form = GameCreateForm()
-    return render(request, 'game/create_game.html', {
-        'form': form
-    })
-
+        return HttpResponse(status=403)
 
 def update_game(request, id):
     if request.user.is_staff or request.user.is_superuser:

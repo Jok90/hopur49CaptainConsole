@@ -282,3 +282,6 @@ li{
 .cart-game {
 }
 
+.no-outline {
+    border: none;
+}

@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-    <div class="games">
+    <div onclick(console.log("Hello")) class="games">
         {% for xgame in games %}
             {% include 'game/single_game.html' with zgame=xgame %}
         {% endfor %}
@@ -35,5 +35,11 @@
     <div>
         <br><br><br><br><br><br><br><br><br><br><br>
     </div>
+
+    <script>
+        function history() {
+                var history = localStorage.setItem("product", {{ game.id }});
+            }
+    </script>
 
 {% endblock %}

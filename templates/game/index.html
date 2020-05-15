@@ -3,14 +3,14 @@
     <form>
     <div class="store-header">
       <ul class="store-list">
-          <input id="category-name" name="category" hidden value="{{ request.GET.category }}" />
-          <script>
-              function filterSelection(name){
-                  document.getElementById('category-name').value = name;
-                  this.form.submit()
-              }
+        <input id="category-name" name="category" hidden value="{{ request.GET.category }}" />
+        <script>
+          function filterSelection(name){
+              document.getElementById('category-name').value = name;
+              this.form.submit()
+          }
           </script>
-        <li id="storeli"><button class="btn"  onclick="filterSelection('all')">All products</button></li>
+        <li id="storeli"><button class="btn" onclick="filterSelection('all')">All products</button></li>
         <li id="storeli"><button class="btn" onclick="filterSelection('capcom')">Capcom</button></li>
         <li id="storeli"><button class="btn" onclick="filterSelection('gamefreak')">Game Freak</button></li>
         <li id="storeli"><button class="btn" onclick="filterSelection('hallaboratory')">HAL Laboratory</button></li>

@@ -11,6 +11,7 @@ def index(request):
     logging.error('orderBy %s' % orderBy)
 
     games = Game.objects.all()
+
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         games = [{

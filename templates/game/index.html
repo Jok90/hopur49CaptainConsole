@@ -21,7 +21,7 @@
     </div>
 
     <div class="allproducts">
-        <h4>All products</h4>
+        <h4 id="all">All products</h4>
 
              <p id="orderby">Order by:</p>
              <select name="orderby_dropdown" onchange="this.form.submit()">
@@ -30,13 +30,12 @@
             </select>
 
         <div class="input-group">
-            <input type="search" class="form-control" id="search-box" placeholder="Enter your search here.." />
-            <div class="input-group-btn">
-                <button type="button" id="search-btn" class="btn btn-default">Search</button>
-            </div>
+            <input type="search" class="form-control" id="search-box" class="search-boks" placeholder="Enter your search here.." />
+            <button type="button" id="search-btn" class="btn btn-default">Search</button>
         </div>
     </div>
-    <div onclick(console.log("Hello")) class="games">
+    </form>
+    <div class="games">
         {% for xgame in games %}
             {% include 'game/single_game.html' with zgame=xgame %}
         {% endfor %}
@@ -50,15 +49,28 @@
         <br><br><br><br><br><br><br><br><br><br><br>
     </div>
 
-    </form>
-
-
 
     <script>
-        function history() {
-                var history = localStorage.setItem("product", {{ game.id }});
-            }
-    </script>
+     function history(zgame) {
+         var historyRaw = localStorage.getItem('history');
+                var history;
+                if(historyRaw === null){
+                    history = [];
+                }
+                else{
+                    history = JSON.parse(historyRaw);
+                }
+                history.push({
+                    id: zgame.id,
+                    image:zgame.image,
+                    name:zgame.name,
+                    price:zgame.price,
+                })
+                localStorage.setItem("history", JSON.stringify(history));
 
+         window.location.href = '/store/' + zgame.id;
+
+     }
+    </script>
 
 {% endblock %}

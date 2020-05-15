@@ -1,11 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="games">
+    {% for game_image in game.gameimage_set.all %}
+    {% endfor %}
+    <h2 class="header">Recently viewed items</h2>
+    <div class="cart-game">
+        <ul id="cart-items">
 
+        </ul>
+    </div>
+    <div id="total_price">
 
+    </div>
+    <script>
+         var cartRaw = localStorage.getItem('history');
+         var cart;
+         if(cartRaw === null){
+             cart = [];
+         }
+         else{
+             cart = JSON.parse(cartRaw);
+         }
+         var cartitems = document.getElementById("cart-items")
+         var totalprice = 0;
+         for(i=0; i<cart.length;i++){
+
+             element = document.createElement("li");
+             var photo_element = document.createElement("img");
+             photo_element.src=cart[i].image;
+             element.appendChild(photo_element);
+             var name_element = document.createElement("h4");
+             name_element.textContent=cart[i].name;
+             element.appendChild(name_element);
+             var price_element = document.createElement("h4");
+             price_element.textContent=cart[i].price;
+             element.appendChild(price_element);
+             cartitems.appendChild(element);
+         }
+    </script>
+
+    <div class="info-btns">
+        <a class="left-btn" id="previous-page" href="/store">Go back to store</a>
+        <a href="/history"><button onclick="window.localStorage.removeItem('history')" class="clear_btn" id="previous-page">Clear history</button></a>
     </div>
     <div>
         <br><br><br><br><br><br><br><br><br><br><br>
     </div>
-
 {% endblock %}

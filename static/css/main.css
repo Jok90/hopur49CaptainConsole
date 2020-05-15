@@ -153,6 +153,20 @@ footer {
     margin-top: 10px;
 }
 
+#all {
+    width: 100%;
+}
+
+.search-boks {
+
+
+}
+
+#search-btn {
+    height: 65%;
+}
+
+
 #imgmove {
     margin-left: 7%;
 }
@@ -198,6 +212,7 @@ footer {
 
 .input-group {
     margin-left: 10%;
+    display: inline-flex;
 }
 
 .cart-btn {
@@ -297,4 +312,8 @@ li{
     text-align: center;
     width: 200%;
     height: 60%;
+}
+
+.header {
+    margin-left: 5%;
 }

@@ -1,9 +1,18 @@
 
 
 <div class="well-game">
-    <a href="/store/{{ zgame.id }}">
+    <button onclick="history({
+                    id:{{ zgame.id }},
+                    image:'{{ zgame.image }}',
+                    name:'{{ zgame.name }}',
+                    price:{{ zgame.price }},
+                })">
         <img class="game-img" src="{{ zgame.image }}" />
         <h4>{{ zgame.name }}</h4>
         <h4>Price: {{ zgame.price }}$</h4>
-    </a>
+    </button>
 </div>
+
+
+
+<!--href="/store/{{ zgame.id }}"-->

@@ -10,6 +10,7 @@ def index(request):
     orderBy = request.GET.get('orderby_dropdown', 'name').lower()
     logging.error('orderBy %s' % orderBy)
 
+    games = Game.objects.all()
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         games = [{
@@ -19,7 +20,19 @@ def index(request):
             'firstImage': x.gameimage_set.first().image
         } for x in Game.objects.filter(name__icontains=search_filter).order_by(orderBy) ]
         return JsonResponse({'data': games})
-    return render(request, 'game/index.html', context={'games': Game.objects.all().order_by(orderBy)})
+    if 'category' in request.GET:
+        category = request.GET['category']
+        # games = [{
+        #     'id': x.id,
+        #     'name': x.name,
+        #     'description': x.description,
+        #     'firstImage': x.gameimage_set.first().image
+        # } for x in Game.objects.filter(developer__exact=category).order_by(orderBy)]
+        # return JsonResponse({'data': games})
+        if category != 'all':
+            games = games.filter(developer__name__iexact=category)
+
+    return render(request, 'game/index.html', context={'games': games.order_by(orderBy)})
 
 
 

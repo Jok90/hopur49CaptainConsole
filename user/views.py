@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from user.forms.forms import UserCreateForm, UserUpdateForm
 from django.contrib.auth.models import User as DjangoUser
 from user.models import User
-
+import logging
 
 from user.forms.forms import UserCreateForm
 # Create your views here.
@@ -36,7 +36,8 @@ def get_user_by_id(request, id):
     })
 
 def update_user(request, id):
-    instance = get_object_or_404(User, pk=id)
+    logging.error("-------asdasdasd------")
+    instance = get_object_or_404(User, email=request.user.email)
     if request.method == 'POST':
         instance = get_object_or_404(User, pk=id)
         if request.method == 'POST':
@@ -45,6 +46,7 @@ def update_user(request, id):
                 form.save()
                 return redirect('user_details', id=id)
     else:
+        logging.error("-------asdasdasd------")
         form = UserUpdateForm(instance=instance)
     return render(request, 'user/update_user.html', {
         'form': form,

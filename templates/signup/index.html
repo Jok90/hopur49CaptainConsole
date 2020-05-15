@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="input">
-        <form action=""  method="get">
-            <label for="user">Username:</label>
-            <input type="text" id="user" name="user"><br><br>
-            <label for="passw">Password:</label>
-            <input type="password" id="passw" name="passw"><br><br>
-            <label id="imgmove" for="img">Image:</label>
-            <input type="file" id="img" name="img" accept="image/*"><br><br>
+        <form action=""  method="POST">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+{#            <label for="user">Username:</label>#}
+{#            <input type="text" id="username" name="username"><br><br>#}
+{#            <label for="user">Email:</label>#}
+{#            <input type="text" id="email" name="email"><br><br>#}
+{#            <label for="passw">Password:</label>#}
+{#            <input type="password" id="password" name="password"><br><br>#}
+{#            <label id="imgmove" for="img">Image:</label>#}
+{#            <input type="file" id="img" name="img" accept="image/*"><br><br>#}
             <input id="button" type="submit" value="Sign up">
         </form>
     </div>

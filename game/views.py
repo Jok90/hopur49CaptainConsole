@@ -1,4 +1,4 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from game.forms.game_form import GameCreateForm, GameUpdateForm
 from game.models import Game, GameImage
@@ -26,36 +26,44 @@ def get_game_by_id(request, id):
 
 
 def create_game(request):
-    if request.method == 'POST':
-        form = GameCreateForm(data=request.POST)
-        if form.is_valid():
-            game = form.save()
-            game_image = GameImage(image=request.POST['image'], game=game)
-            game_image.save()
-            return redirect('game-index')
+    if request.user.is_staff or request.user.is_superuser:
+        if request.method == 'POST':
+            form = GameCreateForm(data=request.POST)
+            if form.is_valid():
+                game = form.save()
+                game_image = GameImage(image=request.POST['image'], game=game)
+                game_image.save()
+                return redirect('game-index')
+        else:
+            form = GameCreateForm()
+        return render(request, 'game/create_game.html', {
+            'form': form
+        })
     else:
-        form = GameCreateForm()
-    return render(request, 'game/create_game.html', {
-        'form': form
-    })
-
+        return HttpResponse(status=403)
 
 def update_game(request, id):
-    instance = get_object_or_404(Game, pk=id)
-    if request.method == 'POST':
-        form = GameUpdateForm(data=request.POST, instance=instance)
-        if form.is_valid():
-            form.save()
-            return redirect('game_details', id=id)
+    if request.user.is_staff or request.user.is_superuser:
+        instance = get_object_or_404(Game, pk=id)
+        if request.method == 'POST':
+            form = GameUpdateForm(data=request.POST, instance=instance)
+            if form.is_valid():
+                form.save()
+                return redirect('game_details', id=id)
+        else:
+            form = GameUpdateForm(instance=instance)
+        return render(request, 'game/update_game.html', {
+            'form': form,
+            'id': id
+        })
     else:
-        form = GameUpdateForm(instance=instance)
-    return render(request, 'game/update_game.html', {
-        'form': form,
-        'id': id
-    })
+        return HttpResponse(status=403)
 
 
 def delete_game(request, id):
-    game = get_object_or_404(Game, pk=id)
-    game.delete()
-    return redirect('game-index')
+    if request.user.is_staff or request.user.is_superuser:
+        game = get_object_or_404(Game, pk=id)
+        game.delete()
+        return redirect('game-index')
+    else:
+        return HttpResponse(status=403)

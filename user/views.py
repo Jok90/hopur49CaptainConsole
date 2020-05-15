@@ -27,5 +27,10 @@ def create_user(request):
     })
 
 def loginpage(request):
-    return render(request, 'user/loginpage.html',{
+    return render(request, 'user/loginpage.html', {
+    })
+
+def get_user_by_id(request, id):
+    return render(request, 'user/user_details.html', {
+        'user': get_object_or_404(User, pk=id)
     })

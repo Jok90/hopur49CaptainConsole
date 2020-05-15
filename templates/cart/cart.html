@@ -4,7 +4,7 @@
 {#        <img src="{{ game_image.image }}" class="game-img" />#}
 {#        <img class="game-img" src="{{ game.image }}" />#}
     {% endfor %}
-    <div>
+    <div class="cart-game">
         <ul id="cart-items">
 
         </ul>
@@ -30,10 +30,10 @@
              var photo_element = document.createElement("img");
              photo_element.src=cart[i].image;
              element.appendChild(photo_element);
-             var name_element = document.createElement("p");
+             var name_element = document.createElement("h4");
              name_element.textContent=cart[i].name;
              element.appendChild(name_element);
-             var price_element = document.createElement("p");
+             var price_element = document.createElement("h4");
              price_element.textContent=cart[i].price;
              element.appendChild(price_element);
              cartitems.appendChild(element);

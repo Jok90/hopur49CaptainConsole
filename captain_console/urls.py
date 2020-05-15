@@ -28,7 +28,6 @@ urlpatterns = [
     path('store/', include('game.urls')),
     path('developers/', include('developer.urls')),
     path('users/', include('user.urls')),
-    path('cart/', include('cart.urls'))
-
-
+    path('cart/', include('cart.urls')),
+    path('history/', include('history.urls')),
 ]

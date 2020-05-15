@@ -24,7 +24,6 @@ def get_game_by_id(request, id):
         'game': get_object_or_404(Game, pk=id)
     })
 
-
 def create_game(request):
     if request.user.is_staff or request.user.is_superuser:
         if request.method == 'POST':

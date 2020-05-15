@@ -41,12 +41,16 @@
                 localStorage.setItem("cart", JSON.stringify(cart));
 
             }
+            function buyproduct() {
+                var product = localStorage.setItem("product", {{ game.name }})
+                product =
+            }
         </script>
 
         <div class="info-btns">
             <button onclick="add_to_cart()" class="left-btn" id="cart-btn" ">Add to cart</button>
             <a href="/checkout/contact_info">
-                <button class="right-btn" id="cart-btn" ">Buy product</button>
+                <button onclick="buyproduct()" class="right-btn" id="cart-btn" ">Buy product</button>
             </a>
         </div>
 

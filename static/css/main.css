@@ -242,6 +242,12 @@ footer {
     text-align: center;
 }
 
+#total_price {
+    font-size: larger;
+    margin-left: 8%;
+    font-weight: bold;
+}
+
 
 
 

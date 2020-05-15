@@ -79,8 +79,9 @@ footer {
 }
 
 .input {
-    text-align: center;
+    margin-left: 35%;
     padding-top: 4%;
+    width: 30%;
 }
 
 .form {

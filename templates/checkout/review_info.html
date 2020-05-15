@@ -1,60 +1,96 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="cart">
-        
+    <body onload="getreviewData()">
         <div class="table-and-buttons">
             <h4 id="legend"> Checkout - Review step</h4>
             <table class="table">
-                <thead>
-                    <tr>
-                        <td> Product: </td>
-                        <td> Price: </td>
-                    </tr>
-                </thead>
 
-                <tbody>
-                {% for cart in carts %}
-                    <tr>
-                        <td>
-                            <h4>{{ cart.games.name }} </h4>
-                            {{ cart.games.short_description }} <br>
-                            {{ cart.games.price }} $
-                        </td>
 
-                        <td>
-                            <input id="quantity-displayorder" data-id="{{ cart.games.id }}" type="number" value="{{ cart.quantity }}" disabled>
-                        </td>
-
-                        <td>
-                            {% for games, price in eachItemTotal.items %}
-                                {% if games == cart.games.id %}
-                                    {{ price }}
-                                {% endif %}
-                                {% endfor %}
-                    </tr>
-                {% endfor %}
-                </tbody>
-
-                {% for x in contact_info %}
+                <tr>
+                    <td>Personal Information:</td>
                     <td>
-                        <h4>{{ x.name }} </h4>
-                        {{ x.address }}
-                        {{ x.city }}
-                        {{ x.country }}
-                        {{ x.postalcode }}
+                        <b>Name: </b><input id="name" readonly><br>
+                        <b>Address: </b><input id="address" readonly><br>
+                        <b>City: </b><input id="city" readonly><br>
+                        <b>Postal code: </b><input id="postal" readonly><br>
+                        <b>Country: </b><input id="country" readonly><br>
                     </td>
-                {% endfor %}
-                <td id="total" colspan="3"> <h4>Total:</h4></td>
-                <td id="total" colspan="2"> <h4> {{ sumTotal }} </h4></td>
+                </tr>
+                <tr>
+                    <td>Payment Information:</td>
+                    <td>
+                        <b>Cardholder: </b><input id="cardholder" readonly><br>
+                        <b>Card number: </b><input id="cardnr" readonly><br>
+                        <b>Exp month: </b><input id="expm" readonly><br>
+                        <b>Exp year: </b><input id="expy" readonly><br>
+                        <b>CVC: </b><input id="cvc" readonly><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product:</td>
+                    <td>
+                        <b>Product ID: </b> <input id="product" readonly><br>
+                        <b>Price: </b> <input placeholder="10$" id="price" readonly><br>
+                    </td>
+                </tr>
+
+                <script>
+                    function getreviewData() {
+                        var getcountry = window.localStorage.getItem("country");
+                        document.getElementById("country").value = getcountry;
+                        /*element = document.createElement("div");
+                        name_elem.textContent = getcountry.country;
+                        element.appendChild(name_elem);*/
+                        var getaddress = window.localStorage.getItem("address");
+                        document.getElementById("address").value = getaddress;
+
+                        var getcardholder = window.localStorage.getItem("cardholder");
+                        document.getElementById("cardholder").value = getcardholder;
+
+                        var getcardnr = window.localStorage.getItem("cardnr");
+                        document.getElementById("cardnr").value = getcardnr;
+
+                        var getcity = window.localStorage.getItem("city");
+                        document.getElementById("city").value = getcity;
+
+                        var getcvc = window.localStorage.getItem("cvc");
+                        document.getElementById("cvc").value = getcvc;
+
+                        var getexpm = window.localStorage.getItem("expm");
+                        document.getElementById("expm").value = getexpm;
+
+                        var getexpy = window.localStorage.getItem("expy");
+                        document.getElementById("expy").value = getexpy;
+
+                        var getname = window.localStorage.getItem("name");
+                        document.getElementById("name").value = getname;
+
+                        var getpostal = window.localStorage.getItem("postal");
+                        document.getElementById("postal").value = getpostal;
+
+                        var getproduct = window.localStorage.getItem("product");
+                        document.getElementById("product").value = getproduct;
+
+                        var getprodprice = window.localStorage.getItem("price");
+                        document.getElementById("price").value = getprodprice;
+
+                        var getprodname = window.localStorage.getItem("prodname");
+                        document.getElementById("prodname").value = getprodname;
+
+                    }
+
+
+                </script>
+
 
             </table>
+        </div>
             <div class="info-btns">
                 <a class="left-btn" id="previous-page" href="/checkout/payment_info">Go back to payment</a>
                 <a class="right-btn" id="create-order" href="/checkout/confirmation">Confirm order</a>
             </div>
-        </div>
-    </div>
 
+    </body>
 
 {% endblock %}

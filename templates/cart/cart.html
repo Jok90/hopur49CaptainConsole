@@ -4,7 +4,7 @@
 {#        <img src="{{ game_image.image }}" class="game-img" />#}
 {#        <img class="game-img" src="{{ game.image }}" />#}
     {% endfor %}
-    <div>
+    <div class="cart-game" xmlns="http://www.w3.org/1999/html">
         <ul id="cart-items">
 
         </ul>
@@ -30,10 +30,10 @@
              var photo_element = document.createElement("img");
              photo_element.src=cart[i].image;
              element.appendChild(photo_element);
-             var name_element = document.createElement("p");
+             var name_element = document.createElement("h4");
              name_element.textContent=cart[i].name;
              element.appendChild(name_element);
-             var price_element = document.createElement("p");
+             var price_element = document.createElement("h4");
              price_element.textContent=cart[i].price;
              element.appendChild(price_element);
              cartitems.appendChild(element);
@@ -46,9 +46,9 @@
     <div class="info-btns">
         <a class="left-btn" id="previous-page" href="/store">Go back to store</a>
         <a class="right-btn" id="previous-page" href="/checkout/payment_info">Continue to payment</a>
+        <a href="/cart"><button onclick="window.localStorage.clear()" class="clear_btn" id="previous-page">Clear cart</button></a>
     </div>
     <div>
         <br><br><br><br><br><br><br><br><br><br><br>
     </div>
-
 {% endblock %}

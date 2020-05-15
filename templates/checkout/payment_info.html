@@ -2,7 +2,7 @@
 {% block content %}
     <div class="input">
         <h4 id="legend"> Checkout - Card information </h4><br><br>
-        <form class="form" action=""  method="get">
+        <!-- <form class="form" action=""  method="get"> -->
             <label for="cardholder">Cardholder:</label>
             <input type="text" id="cardholder" name="cardholder"><br><br>
             <label for="cardnr">Card number:</label>
@@ -43,8 +43,26 @@
             <div class="info-btns">
                 <a class="left-btn" id="previous-page" href="/checkout/contact_info">Go back to contact information</a>
                 <a class="right-btn" id="previous-page" href="/checkout/review_info">Review information</a>
+                <button onclick="review_info()" class="buy" id="cart-btn">review</button>
             </div>
-        </form>
+
+            <script>
+            function review_info() {
+              var tempholder=  document.getElementById('cardholder').value;
+                localStorage.setItem("cardholder", tempholder );
+                var tempcard=  document.getElementById('cardnr').value;
+                localStorage.setItem("cardnr", tempcard);
+                var tempexpm=  document.getElementById('ExpMon').value;
+                localStorage.setItem("expm", tempexpm);
+                var tempexpy =  document.getElementById('ExpYear').value;
+                localStorage.setItem("expy", tempexpy);
+                var tempcvc=  document.getElementById('cvc').value;
+                localStorage.setItem("cvc", tempcvc);
+                window.location.href = 'http://127.0.0.1:8000/checkout/review_info';
+            }
+
+            </script>
+        <!-- </form> -->
     </div>
     <div>
         <br><br><br><br><br><br><br><br><br><br><br>

@@ -39,15 +39,19 @@
                     price:{{ game.price }},
                 })
                 localStorage.setItem("cart", JSON.stringify(cart));
-            }
 
+            }
+            function buyproduct() {
+                var product = localStorage.setItem("product", {{ game.id }});
+                window.location.href = 'http://127.0.0.1:8000/checkout/contact_info';
+            }
         </script>
 
     <div class="buy-btns">
-        <button onclick="add_to_cart()" class="left-btn" id="cart-btn" ">Add to cart</button>
-        <a href="/checkout/contact_info">
-            <button onclick="buyproduct()" class="buy" id="cart-btn" ">Buy product</button>
-        </a>
+        <button onclick="add_to_cart()" class="left-btn" id="cart-btn">Add to cart</button>
+
+            <button onclick="buyproduct()" class="buy" id="cart-btn">Buy product</button>
+
     </div>
 
 

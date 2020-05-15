@@ -27,3 +27,20 @@ class GameImage(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE)
 
 
+#history fyrir neðan
+
+#from django.contrib.contenttypes.models import  import ContentType
+#from django.contrib.contenttypes.fields import  import GenericForeignKEy
+#from django.conf import settings
+
+#User = settings.AUTH_USER_MODEL
+
+#class History(models.Model) :
+ #   user = models.ForeignKey(User, on_delete=models.CASCADE)
+  #  content_type = models.ForeignKey(ContentType, on_delete=models.SET_NULL, null=True)
+   # object_id = models.PositiveIntegerField()
+    #content_object =GenericForeignKEy()
+    #viewed_on = models.DateTimeField(auto_now_add=True)
+
+    #def __str__(self):
+    #    return self.content_object

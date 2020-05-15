@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
     {% for game_image in game.gameimage_set.all %}
-        <img src="{{ game_image.image }}" class="game-img" />
+{#        <img src="{{ game_image.image }}" class="game-img" />#}
+{#        <img class="game-img" src="{{ game.image }}" />#}
     {% endfor %}
     <div>
         <ul id="cart-items">
@@ -27,7 +28,7 @@
 
              element = document.createElement("li");
              var photo_element = document.createElement("img");
-             photo_element.alt=cart[i].image;
+             photo_element.src=cart[i].image;
              element.appendChild(photo_element);
              var name_element = document.createElement("p");
              name_element.textContent=cart[i].name;

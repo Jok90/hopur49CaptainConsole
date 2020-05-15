@@ -27,3 +27,4 @@ class Basket(models.Model):
 class UserImage(models.Model):
     image = models.CharField(max_length=999)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+

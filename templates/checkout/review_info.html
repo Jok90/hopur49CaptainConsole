@@ -8,21 +8,78 @@
 
 
                 <tr>
-                    <td>Product:</td><td><input id="country" readonly></td>
+                    <td>Personal Information:</td>
+                    <td>
+                        <b>Name: </b><input id="name" readonly><br>
+                        <b>Address: </b><input id="address" readonly><br>
+                        <b>City: </b><input id="city" readonly><br>
+                        <b>Postal code: </b><input id="postal" readonly><br>
+                        <b>Country: </b><input id="country" readonly><br>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Price</td><td></td>
+                    <td>Payment Information:</td>
+                    <td>
+                        <b>Cardholder: </b><input id="cardholder" readonly><br>
+                        <b>Card number: </b><input id="cardnr" readonly><br>
+                        <b>Exp month: </b><input id="expm" readonly><br>
+                        <b>Exp year: </b><input id="expy" readonly><br>
+                        <b>CVC: </b><input id="cvc" readonly><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Product:</td>
+                    <td>
+                        <b>Product ID: </b> <input id="product" readonly><br>
+                        <b>Price: </b> <input placeholder="10$" id="price" readonly><br>
+                    </td>
                 </tr>
 
                 <script>
                     function getreviewData() {
-                        var getcountry = localStorage.getItem("country");
-                        document.getElementById("country").setAttribute(value,"x");
-                        element = document.createElement("div");
+                        var getcountry = window.localStorage.getItem("country");
+                        document.getElementById("country").value = getcountry;
+                        /*element = document.createElement("div");
                         name_elem.textContent = getcountry.country;
-                        element.appendChild(name_elem);
+                        element.appendChild(name_elem);*/
+                        var getaddress = window.localStorage.getItem("address");
+                        document.getElementById("address").value = getaddress;
+
+                        var getcardholder = window.localStorage.getItem("cardholder");
+                        document.getElementById("cardholder").value = getcardholder;
+
+                        var getcardnr = window.localStorage.getItem("cardnr");
+                        document.getElementById("cardnr").value = getcardnr;
+
+                        var getcity = window.localStorage.getItem("city");
+                        document.getElementById("city").value = getcity;
+
+                        var getcvc = window.localStorage.getItem("cvc");
+                        document.getElementById("cvc").value = getcvc;
+
+                        var getexpm = window.localStorage.getItem("expm");
+                        document.getElementById("expm").value = getexpm;
+
+                        var getexpy = window.localStorage.getItem("expy");
+                        document.getElementById("expy").value = getexpy;
+
+                        var getname = window.localStorage.getItem("name");
+                        document.getElementById("name").value = getname;
+
+                        var getpostal = window.localStorage.getItem("postal");
+                        document.getElementById("postal").value = getpostal;
+
+                        var getproduct = window.localStorage.getItem("product");
+                        document.getElementById("product").value = getproduct;
+
+                        var getprodprice = window.localStorage.getItem("price");
+                        document.getElementById("price").value = getprodprice;
+
+                        var getprodname = window.localStorage.getItem("prodname");
+                        document.getElementById("prodname").value = getprodname;
 
                     }
+
 
                 </script>
 

@@ -1,16 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form>
     <div class="store-header">
       <ul class="store-list">
-          <input id="category-name" name="category" hidden value="{{ request.GET.category }}" />
-          <script>
-              function filterSelection(name){
-                  document.getElementById('category-name').value = name;
-                  this.form.submit()
-              }
-          </script>
-        <li id="storeli"><button class="btn"  onclick="filterSelection('all')">All products</button></li>
+        <li id="storeli"><button class="btn" onclick="filterSelection('all')">All products</button></li>
         <li id="storeli"><button class="btn" onclick="filterSelection('capcom')">Capcom</button></li>
         <li id="storeli"><button class="btn" onclick="filterSelection('gamefreak')">Game Freak</button></li>
         <li id="storeli"><button class="btn" onclick="filterSelection('hallaboratory')">HAL Laboratory</button></li>
@@ -19,16 +11,15 @@
         <li id="storeli"><button class="btn" onclick="filterSelection('sega')">Sega</button></li>
       </ul>
     </div>
-
     <div class="allproducts">
         <h4>All products</h4>
-
+        <form class="allproducts">
              <p id="orderby">Order by:</p>
              <select name="orderby_dropdown" onchange="this.form.submit()">
                 <option value="name"{% if request.GET.orderby_dropdown == "name" %} selected{% endif %}><a href="#">Name</a></option>
                  <option value="price" {% if request.GET.orderby_dropdown == "price" %} selected{% endif %}><a href="#">Price</a></option>
             </select>
-
+        </form>
         <div class="input-group">
             <input type="search" class="form-control" id="search-box" placeholder="Enter your search here.." />
             <div class="input-group-btn">
@@ -36,29 +27,13 @@
             </div>
         </div>
     </div>
-    <div onclick(console.log("Hello")) class="games">
+    <div class="games">
         {% for xgame in games %}
             {% include 'game/single_game.html' with zgame=xgame %}
         {% endfor %}
     </div>
-    {% if request.user.is_superuser or request.user.is_staff %}
-    <div class="button">
-        <a href="{% url 'create_game' %}" class="block btn btn-primary">Create game </a>
-    </div>
-    {% endif %}
     <div>
         <br><br><br><br><br><br><br><br><br><br><br>
     </div>
-
-    </form>
-
-
-
-    <script>
-        function history() {
-                var history = localStorage.setItem("product", {{ game.id }});
-            }
-    </script>
-
 
 {% endblock %}

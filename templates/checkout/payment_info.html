@@ -42,7 +42,8 @@
 
             <div class="info-btns">
                 <a class="left-btn" id="previous-page" href="/checkout/contact_info">Go back to contact information</a>
-                <button onclick="review_info()" class="left-btn" id="cart-btn">Review information</button>
+                <a class="right-btn" id="previous-page" href="/checkout/review_info">Review information</a>
+                <button onclick="review_info()" class="buy" id="cart-btn">review</button>
             </div>
 
             <script>
@@ -57,7 +58,7 @@
                 localStorage.setItem("expy", tempexpy);
                 var tempcvc=  document.getElementById('cvc').value;
                 localStorage.setItem("cvc", tempcvc);
-                window.location.href = '/checkout/review_info';
+                window.location.href = 'http://127.0.0.1:8000/checkout/review_info';
             }
 
             </script>

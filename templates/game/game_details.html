@@ -43,14 +43,12 @@
             }
         </script>
 
-
-        <button onclick="add_to_cart()" class="cart-btn" id="cart-btn" ">Add to cart</button>
-
-
-        <a href="/checkout/contact_info">
-            <button class="cart-btn" id="cart-btn" ">Buy product</button>
-        </a>
-
+        <div class="info-btns">
+            <button onclick="add_to_cart()" class="left-btn" id="cart-btn" ">Add to cart</button>
+            <a href="/checkout/contact_info">
+                <button class="right-btn" id="cart-btn" ">Buy product</button>
+            </a>
+        </div>
 
 
 {% endblock %}

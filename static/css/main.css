@@ -226,6 +226,7 @@ footer {
     border-radius: 10px;
     color: black;
     text-align: center;
+    height: 80%;
 }
 
 .right-btn {
@@ -279,9 +280,21 @@ li{
     margin-bottom: 5%;
 }
 
-.cart-game {
-}
-
 .no-outline {
     border: none;
+}
+
+.clear_btn {
+    margin-top: 65%;
+    margin-left: 50%;
+    border-style: solid;
+    border-width: thin;
+    padding: 1%;
+    background-color: #58a6b1;
+    border-color: black;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    width: 200%;
+    height: 60%;
 }

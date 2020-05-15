@@ -15,9 +15,9 @@
         <h4>All products</h4>
         <form class="allproducts">
              <p id="orderby">Order by:</p>
-             <select name = "dropdown">
-                 <option value = "Price" selected><a href="#">Price</a></option>
-                 <option value = "Name"><a href="#">Name</a></option>
+             <select name="orderby_dropdown" onchange="this.form.submit()">
+                <option value="name"{% if request.GET.orderby_dropdown == "name" %} selected{% endif %}><a href="#">Name</a></option>
+                 <option value="price" {% if request.GET.orderby_dropdown == "price" %} selected{% endif %}><a href="#">Price</a></option>
             </select>
         </form>
         <div class="input-group">

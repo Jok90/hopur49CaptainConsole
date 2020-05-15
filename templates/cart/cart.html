@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
+    {% for game_image in game.gameimage_set.all %}
+        <img src="{{ game_image.image }}" class="game-img" />
+    {% endfor %}
     <div>
         <ul id="cart-items">
 
@@ -23,6 +26,9 @@
          for(i=0; i<cart.length;i++){
 
              element = document.createElement("li");
+             var photo_element = document.createElement("img");
+             photo_element.alt=cart[i].image;
+             element.appendChild(photo_element);
              var name_element = document.createElement("p");
              name_element.textContent=cart[i].name;
              element.appendChild(name_element);
@@ -40,6 +46,8 @@
         <a class="left-btn" id="previous-page" href="/store">Go back to store</a>
         <a class="right-btn" id="previous-page" href="/checkout/payment_info">Continue to payment</a>
     </div>
-
+    <div>
+        <br><br><br><br><br><br><br><br><br><br><br>
+    </div>
 
 {% endblock %}

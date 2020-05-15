@@ -41,11 +41,17 @@
             {% include 'game/single_game.html' with zgame=xgame %}
         {% endfor %}
     </div>
+    {% if request.user.is_superuser or request.user.is_staff %}
+    <div class="button">
+        <a href="{% url 'create_game' %}" class="block btn btn-primary">Create game </a>
+    </div>
+    {% endif %}
     <div>
         <br><br><br><br><br><br><br><br><br><br><br>
     </div>
 
     </form>
+
 
 
     <script>

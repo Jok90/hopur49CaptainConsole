@@ -169,6 +169,13 @@ footer {
     margin: 20px;
 }
 
+.user-img {
+
+    height: 200px;
+    background-size: cover;
+    margin: 20px;
+}
+
 .well-game {
     display: inline-flex;
     margin-left: 12%;

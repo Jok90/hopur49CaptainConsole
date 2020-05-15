@@ -4,6 +4,8 @@
     <h1>{{ user.name }}</h1>
     <p>{{ user.address }}</p>
     <p>{{ user.phoneno }}</p>
-    <p>{{ user.username }}</p>
+    <p>{{ user.email }}</p>
+
+    <a href="{% url 'update_user' user.id %}" class="block btn btn-primary">Update user </a>
 
 {% endblock %}

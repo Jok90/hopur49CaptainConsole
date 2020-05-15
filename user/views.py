@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from user.forms.forms import UserCreateForm
+from user.forms.forms import UserCreateForm, UserUpdateForm
 from django.contrib.auth.models import User as DjangoUser
 from user.models import User
 
@@ -33,4 +33,20 @@ def loginpage(request):
 def get_user_by_id(request, id):
     return render(request, 'user/user_details.html', {
         'user': get_object_or_404(User, pk=id)
+    })
+
+def update_user(request, id):
+    instance = get_object_or_404(User, pk=id)
+    if request.method == 'POST':
+        instance = get_object_or_404(User, pk=id)
+        if request.method == 'POST':
+            form = UserUpdateForm(data=request.POST, instance=instance)
+            if form.is_valid():
+                form.save()
+                return redirect('user_details', id=id)
+    else:
+        form = UserUpdateForm(instance=instance)
+    return render(request, 'user/update_user.html', {
+        'form': form,
+        'id': id
     })

@@ -39,12 +39,11 @@
                     price:{{ game.price }},
                 })
                 localStorage.setItem("cart", JSON.stringify(cart));
-
             }
             function buyproduct() {
                 var product = localStorage.setItem("product", {{ game.id }});
 
-                window.location.href = 'http://127.0.0.1:8000/checkout/contact_info';
+                window.location.href = '/checkout/contact_info';
             }
         </script>
 

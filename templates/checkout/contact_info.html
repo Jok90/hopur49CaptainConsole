@@ -263,8 +263,7 @@
 
             <div class="info-btns">
             <a class="left-btn" id="previous-page" href="/store">Go back to store</a>
-            <a class="right-btn" id="previous-page" href="/checkout/payment_info">Continue to payment</a>
-                <button onclick="continue_payment()" class="buy" id="cart-btn">payment</button>
+                <button onclick="continue_payment()" class="left-btn" id="cart-btn">Continue to payment</button>
             </div>
 
             <script>
@@ -279,7 +278,7 @@
                 localStorage.setItem("country", tempcountry);
                 var temppostal=  document.getElementById('postalcode').value;
                 localStorage.setItem("postal", temppostal);
-                window.location.href = 'http://127.0.0.1:8000/checkout/payment_info';
+                window.location.href = '/checkout/payment_info';
             }
 
             </script>

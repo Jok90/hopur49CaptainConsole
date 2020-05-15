@@ -2,14 +2,22 @@
 {% block content %}
     <div class="store-header">
       <ul class="store-list">
-        <a href="#"><li id="storeli">Capcom</li></a>
-        <a href="#"><li id="storeli">Game Freak</li></a>
-        <a href="#"><li id="storeli">HAL Laboratory</li></a>
-        <a href="#"><li id="storeli">Konami</li></a>
-        <a href="#"><li id="storeli">Nintendo</li></a>
-        <a href="#"><li id="storeli">Sega</li></a>
-        <a href="/store"><li id="storeli">All products</li></a>
+        <li id="storeli"><button class="btn" onclick="filterSelection('all')">All products</button></li>
+        <li id="storeli"><button class="btn" onclick="filterSelection('capcom')">Capcom</button></li>
+        <li id="storeli"><button class="btn" onclick="filterSelection('gamefreak')">Game Freak</button></li>
+        <li id="storeli"><button class="btn" onclick="filterSelection('hallaboratory')">HAL Laboratory</button></li>
+        <li id="storeli"><button class="btn" onclick="filterSelection('konami')">Konami</button>></li>
+        <li id="storeli"><button class="btn" onclick="filterSelection('nintendo')">Nintendo</button></li>
+        <li id="storeli"><button class="btn" onclick="filterSelection('sega')">Sega</button></li>
       </ul>
+    </div>
+    <div class="container">
+        <div class="filterDiv capcom"></div>
+        <div class="filterDiv gamefreak"></div>
+        <div class="filterDiv hallaboratory">Capcom</div>
+        <div class="filterDiv konami">Capcom</div>
+        <div class="filterDiv nintendo">Capcom</div>
+        <div class="filterDiv sega">Capcom</div>
     </div>
     <div class="allproducts">
         <h4>All products</h4>

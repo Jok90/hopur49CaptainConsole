@@ -5,6 +5,7 @@ from game.models import Game
 
 
 class User(models.Model):
+    image = models.CharField(max_length=999, blank=True)
     username = models.CharField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
     address = models.CharField(max_length=750)
@@ -22,3 +23,7 @@ class Purchases(models.Model):
 class Basket(models.Model):
     id_user = models.ForeignKey(User, on_delete=models.CASCADE)
     id_game = models.ForeignKey(Game, on_delete=models.CASCADE)
+
+class UserImage(models.Model):
+    image = models.CharField(max_length=999)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)

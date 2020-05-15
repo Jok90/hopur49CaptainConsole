@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+    {% for game_image in user.userimage_set.all %}
+        <img src="{{ game_image.image }}" class="user-img" />
+    {% endfor %}
     <h1>{{ user.name }}</h1>
     <p>{{ user.address }}</p>
     <p>{{ user.phoneno }}</p>
